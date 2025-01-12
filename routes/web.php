@@ -18,3 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/',[SimpleController::class,'index'])->name('index.show');
+Route::post('/',[SimpleController::class,'indexValidate'])->name('index.validate');

@@ -6,9 +6,18 @@
     <title>Only for Adding the Category</title>
 </head>
 <body>
-    <form action="">
-   <input type="text" name="category" placeholder="Enter the Category">
-   <input type="submit" name="Submit">
+<form action="{{ route('index.validate') }}" method="POST">
+    @csrf
+    <input type="text" name="category" placeholder="Enter the Category" value="{{ old('category') }}">
+    
+    @if ($errors->has('category'))
+        <div style="color: red;">{{ $errors->first('category') }}</div>
+    @endif
+    <br>
+    <br>
+    <input type="submit" name="Submit">
 </form>
+
+
 </body>
 </html>
