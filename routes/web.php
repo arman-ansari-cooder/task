@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\SimpleController;
+use App\Livewire\Counter;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,5 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/',[SimpleController::class,'index'])->name('index.show');
-Route::post('/',[SimpleController::class,'indexValidate'])->name('index.validate');
+
+Route::get('/',Counter::class);
+
+
